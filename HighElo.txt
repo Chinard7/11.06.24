@@ -1,0 +1,18 @@
+CREATE SCHEMA `database_highelo` ;
+
+CREATE TABLE `database_highelo`.`table_highelo` (
+  `id` INT NOT NULL,
+  `nome` VARCHAR(255) NULL,
+  `user_account` VARCHAR(255) NULL,
+  `idade` VARCHAR(255) NULL,
+  `forma_de_pagamento` VARCHAR(255) NULL,
+  `tempo_esperado_de_up` VARCHAR(255) NULL,
+  `tipo_de_elo_job` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`));
+
+ALTER TABLE `database_highelo`.`table_highelo` 
+ADD COLUMN `nacionalidade` VARCHAR(255) NULL AFTER `tipo_de_elo_job`;
+
+UPDATE `database_highelo`.`table_highelo` SET `nacionalidade` = 'Brasileiro' WHERE (`id` = '1');
+UPDATE `database_highelo`.`table_highelo` SET `nacionalidade` = 'American' WHERE (`id` = '2');
+
